@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Reference";
+}
+
+<!--
+===================
+  RAFERENCE
+===================
+-->
+
+<script>
+    document.getElementById("reference").className = "nav-item active";
+</script>
+
+<section class="mh-experince" id="mh-experience">
+    <div class="bolor-overlay">
+        <div class="container">
+            <div class="row section-separator">
+                <div class="col-sm-12 col-md-12">
+                    <div class="mh-work">
+                        <h3>Reference</h3>
+
+                        <div class="mh-experience-deatils">
+                            @foreach (var info in ViewBag.info_list)
+                            {
+                                <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s"
+                                     data-wow-delay="0.4s">
+                                    <h4>@info["name"]</h4>
+                                    <ul class="work-responsibility">
+                                        <li>@info["post"]</li>
+                                        <li>@info["department"]</li>
+                                        <li>@info["institution"]</li>
+                                        <li>Email: @info["email"]</li>
+                                    </ul>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
