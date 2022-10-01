@@ -22,9 +22,9 @@ namespace Lab_2.Models
         //[RegularExpression(@"^([01]|+88)?\d{11}", ErrorMessage = "Only Bangladeshi number allowed.")]
         public string Phone { get; set; }
 
+        [Required]
         [DataType(DataType.Date)]
         [DOBDateValidation]
-        [Required]
         public DateTime DOB { get; set; }
 
         public string Blood_group { get; set; }
