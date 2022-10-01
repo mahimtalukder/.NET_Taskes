@@ -14,17 +14,20 @@
         </div>
         <div class="form-group">
             <label for="Email">Email</label>
-            <input type="text" class="form-control" id="Email" name="Email" placeholder="Enter your email" value="" />
+            <input type="text" class="form-control" id="Email" name="Email" placeholder="Enter your email" value="@(Model == null ? "" : Model.Email)" />
+            <small id="emailHelp" class="text-danger">@Html.ValidationMessage("Email")</small>
         </div>
 
         <div class="form-group">
             <label for="Phone">Phone Number</label>
-            <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Enter your phone number" value="" />
+            <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Enter your phone number" value="@(Model == null ? "" : Model.Phone)" />
+            <small id="emailHelp" class="text-danger">@Html.ValidationMessage("Phone")</small>
         </div>
 
         <div class="form-group">
             <label for="DOB">Date of birth</label>
-            <input type="date" class="form-control" id="DOB" name="DOB" placeholder="Enter you date of bath" value="" />
+            <input type="date" value="" class="form-control"  id="DOB"name="DOB" id="" placeholder="XX-XX-XXXX" />
+            <small id="emailHelp" class="text-danger">@Html.ValidationMessage("DOB")</small>
         </div>
 
         <div class="form-group">
@@ -39,6 +42,7 @@
                 <option value="O+">O+</option>
                 <option value="O-">O-</option>
             </select>
+            <small id="emailHelp" class="text-danger">@Html.ValidationMessage("Blood_group")</small>
         </div>
 
         <div class="form-group">
@@ -47,16 +51,19 @@
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
+            <small id="emailHelp" class="text-danger">@Html.ValidationMessage("Gender")</small>
         </div>
 
         <div class="form-group">
             <label for="Password">Password</label>
-            <input class="form-control" id="Password" placeholder="Enter your password" type="password" name="Password" value="" />
+            <input class="form-control" id="Password" placeholder="Enter your password" type="password" name="Password" value="@(Model == null ? "" : Model.Password)" />
+            <small id="emailHelp" class="text-danger">@Html.ValidationMessage("Password")</small>
         </div>
 
         <div class="form-group">
-            <label for="Confrim_password">Confrim Password</label>
-            <input class="form-control" type="password" id="Confrim_password" placeholder="Enter your password again" name="Confrim_password" value="" />
+            <label for="Confirm_password">Confirm Password</label>
+            <input class="form-control" type="password" id="Confirm_password" placeholder="Enter your password again" name="Confirm_password" value="@(Model == null ? "" : Model.Confirm_password)" />
+            <small id="emailHelp" class="text-danger">@Html.ValidationMessage("Confirm_password")</small>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
