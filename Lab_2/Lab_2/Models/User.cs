@@ -19,7 +19,7 @@ namespace Lab_2.Models
         public string Email { get; set; }
 
         [Required]
-        //[RegularExpression(@"^([01]|+88)?\d{11}", ErrorMessage = "Only Bangladeshi number allowed.")]
+        [RegularExpression(@"^([01]|\+88)?\d{11}", ErrorMessage = "Only Bangladeshi number allowed.")]
         public string Phone { get; set; }
 
         [Required]

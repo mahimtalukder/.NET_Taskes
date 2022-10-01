@@ -14,25 +14,38 @@ namespace Lab_2.Models
             protected override ValidationResult IsValid(object value, ValidationContext validationContext)
             {
                 DateTime date;
-                bool parsed = DateTime.TryParse(value.ToString(), out date);
-                if (!parsed)
-                    return new ValidationResult("Invalid Date");
-                else
+
+                try
                 {
-                    //change below as per requirement
-                    var min = DateTime.Now.AddYears(-18); //for min 18 age
-                    var msg = string.Format("Minimum age limite is 18", min);
-                    try
+                    if(value == null)
                     {
-                        if (date > min)
-                            return new ValidationResult(msg);
-                        else
-                            return ValidationResult.Success;
+                        return new ValidationResult("Empty Date");
                     }
-                    catch (Exception e)
+                    bool parsed = DateTime.TryParse(value.ToString(), out date);
+                    if (!parsed)
+                        return new ValidationResult("Invalid Date");
+                    else
                     {
-                        return new ValidationResult(e.Message);
+                        //change below as per requirement
+                        var min = DateTime.Now.AddYears(-18); //for min 18 age
+                        var msg = string.Format("Minimum age limite is 18", min);
+                        try
+                        {
+                            if (date > min)
+                                return new ValidationResult(msg);
+                            else
+                                return ValidationResult.Success;
+                        }
+                        catch (Exception e)
+                        {
+                            return new ValidationResult(e.Message);
+                        }
                     }
+
+                }
+                catch (NullReferenceException ex)
+                {
+                    return new ValidationResult("Date of birth requerd!");
                 }
             }
         }
