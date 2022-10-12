@@ -77,3 +77,5 @@ C:\xampp\htdocs\.NET_Taskes\Lab_3\Lab_3\obj\Debug\Lab_3.csproj.CoreCompileInputs
 C:\xampp\htdocs\.NET_Taskes\Lab_3\Lab_3\obj\Debug\Lab_3.csproj.CopyComplete
 C:\xampp\htdocs\.NET_Taskes\Lab_3\Lab_3\obj\Debug\Lab_3.dll
 C:\xampp\htdocs\.NET_Taskes\Lab_3\Lab_3\obj\Debug\Lab_3.pdb
+C:\xampp\htdocs\.NET_Taskes\Lab_3\Lab_3\bin\EntityFramework.dll
+C:\xampp\htdocs\.NET_Taskes\Lab_3\Lab_3\bin\EntityFramework.xml
