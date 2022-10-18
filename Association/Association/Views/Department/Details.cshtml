@@ -1,0 +1,41 @@
+﻿@model Association.DB.Department
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Department</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+</div>
+<h3>Student List</h3>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Student ID</th>
+    </tr>
+    @foreach (var student in Model.Students)
+    {
+        <tr>
+            <td>@student.Name</td>
+            <td>@student.StudentId</td>
+        </tr>
+    }
+</table>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
