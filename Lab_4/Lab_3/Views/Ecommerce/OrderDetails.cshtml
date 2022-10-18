@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "OrderDetails";
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card card-table">
+            <div class="card-header">
+                <h4 class="card-title">List of Users</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-stripped table-center table-hover datatable">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>ID</th>
+                                <th>Order ID</th>
+                                <th>Product ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var prduct in Model)
+                            {
+                                <tr>
+                                    <td>@prduct.Id</td>
+                                    <td>@prduct.OrderId</td>
+                                    <td>@prduct.ProductId</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
