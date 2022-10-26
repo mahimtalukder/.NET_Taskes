@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Lab_5.Models.ProductModel>
+
+@{
+    ViewBag.Title = "ShowCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowCart</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qty)
+        </th>
+    </tr>
+    @{
+        double total = 0;
+    }
+    @foreach (var item in Model)
+    {
+        { total += (item.Price * item.Qty); }
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qty)
+            </td>
+
+
+        </tr>
+
+    }
+    <tr>
+        <td colspan="3" rowspan="3">Total: @total</td>
+    </tr>
+
+
+</table>
+<form action="/Order/Checkout" method="post">
+    <input type="hidden" name="Total" value="@total" />
+    <input class="btn btn-danger" type="submit" name="submit" value="Checkout" />
+</form>

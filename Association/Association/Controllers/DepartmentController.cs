@@ -20,7 +20,7 @@ namespace Association.Controllers
         public ActionResult Details(int Id)
         {
             var db = new UMSEntities();
-            var department = (from dpartment in db.Departments
+            var department = (from dpartment in db.Departments.Include("Students")
                              where dpartment.Id == Id
                              select dpartment).SingleOrDefault();
             return View(department);

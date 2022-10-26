@@ -18,6 +18,7 @@ namespace Association.DB
         public UMSEntities()
             : base("name=UMSEntities")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
