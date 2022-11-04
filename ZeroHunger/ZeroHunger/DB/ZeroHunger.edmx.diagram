@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2b5a265708974305953c166bd7ad0d6c" Name="Diagram1">
+        <EntityTypeShape EntityType="ZeroHungerModel.Admin" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZeroHungerModel.Area" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZeroHungerModel.DistributeDetail" Width="1.5" PointX="10.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZeroHungerModel.DistributeRequest" Width="1.5" PointX="8.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZeroHungerModel.Employee" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZeroHungerModel.Restaurant" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZeroHungerModel.User" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="ZeroHungerModel.FK_Admins_Admins" ManuallyRouted="false" />
+        <AssociationConnector Association="ZeroHungerModel.FK_Employees_Areas" ManuallyRouted="false" />
+        <AssociationConnector Association="ZeroHungerModel.FK_Restaurants_Areas" ManuallyRouted="false" />
+        <AssociationConnector Association="ZeroHungerModel.FK_DistributeDetails_DistributeRequests" ManuallyRouted="false" />
+        <AssociationConnector Association="ZeroHungerModel.FK_DistributeRequests_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="ZeroHungerModel.FK_DistributeRequests_Restaurants" ManuallyRouted="false" />
+        <AssociationConnector Association="ZeroHungerModel.FK_Employees_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ZeroHungerModel.FK_Restaurants_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
