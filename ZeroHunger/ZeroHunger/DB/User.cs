@@ -23,8 +23,8 @@ namespace ZeroHunger.DB
     
         public int Id { get; set; }
         public string Email { get; set; }
-        public byte[] Password { get; set; }
-        public string Type { get; set; }
+        public string Password { get; set; }
+        public int Type { get; set; }
     
         public virtual ICollection<Admin> Admins { get; set; }
         public virtual ICollection<Employee> Employees { get; set; }
