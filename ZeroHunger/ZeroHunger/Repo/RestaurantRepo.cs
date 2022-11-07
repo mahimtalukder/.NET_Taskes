@@ -30,11 +30,13 @@ namespace ZeroHunger.Repo
             return restaurants;
         }
 
-        public static RestaurantModel Get(int Id)
+        public static RestaurantModel Get(int UserId)
         {
             var db = new ZeroHungerEntities();
             var user = new RestaurantModel();
-            var res = db.Restaurants.Find(Id);
+            var res = (from rs in db.Restaurants
+                       where rs.UserId == UserId
+                       select rs).SingleOrDefault();
 
             user.Id = res.Id;
             user.Name = res.Name;

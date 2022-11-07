@@ -43,6 +43,32 @@ namespace ZeroHunger.Repo
 
         }
 
+        public static UserModel Get(string Email, string Password, int Type)
+        {
+            var db = new ZeroHungerEntities();
+            var user = new UserModel();
+            var us = (from needUser in db.Users
+                     where needUser.Email == Email && needUser.Type == Type
+                     select needUser).SingleOrDefault();
+            if(us != null)
+            {
+                if(us.Password == Password)
+                {
+                    user.Id = us.Id;
+                    user.Email = us.Email;
+                    user.Password = us.Password;
+                    user.Type = us.Type;
+
+                    return user;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            return null;
+        }
+
         public static User Create(UserModel user)
         {
 

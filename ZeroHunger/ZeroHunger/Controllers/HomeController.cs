@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using ZeroHunger.DB;
 using ZeroHunger.Models;
 using ZeroHunger.Repo;
@@ -30,10 +31,63 @@ namespace ZeroHunger.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Login()
         {
 
+
             return View();
+        }
+        [HttpPost]
+        public ActionResult Login(UserModel user)
+        {
+            if (ModelState.IsValid)
+            {
+                var neededUser = UserRepo.Get(user.Email, user.Password, user.Type);
+
+                if (neededUser != null)
+                {
+                    string json = new JavaScriptSerializer().Serialize(neededUser);
+                    if (user.Type == 1)
+                    {
+                        Session["admin"] = json;
+                        return RedirectToAction("Index", "Admin");
+                    }
+                    else if (user.Type == 2)
+                    {
+                        Session["employee"] = json;
+                        return RedirectToAction("Index", "Employee");
+
+                    }
+                    else if(user.Type == 3)
+                    {
+                        Session["restaurant"] = json;
+                        return RedirectToAction("Index", "Restaurant");
+
+                    }
+                    return View();
+                }
+               
+            }
+            return View();
+        }
+
+        public ActionResult Logout()
+        {
+            if(Session["admin"] != null)
+            {
+                Session.Remove("admin");
+            }
+            if(Session["employee"] != null)
+            {
+                Session.Remove("employee");
+            }
+            if (Session["restaurant"] != null)
+            {
+                Session.Remove("restaurant");
+            }
+
+            return RedirectToAction("Login");
         }
 
         [HttpGet]
@@ -71,5 +125,6 @@ namespace ZeroHunger.Controllers
             ViewBag.areas = areas;
             return View();
         }
+
     }
 }

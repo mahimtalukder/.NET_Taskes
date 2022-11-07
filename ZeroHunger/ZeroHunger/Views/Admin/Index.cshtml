@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Dashboard = "/Admin";
+    ViewBag.Image = Model.Image;
+    ViewBag.Name = Model.Name;
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="content container-fluid">
+
+    <div class="row">
+        <div class="col-xl-12 d-flex">
+            <div class="card flex-fill">
+                <div class="card-header">
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between flex-wrap flex-md-nowrap">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    document.getElementById("Dashboard").className = "active";
+</script>
+
