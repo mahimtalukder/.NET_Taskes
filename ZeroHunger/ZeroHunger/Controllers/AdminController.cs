@@ -22,5 +22,12 @@ namespace ZeroHunger.Controllers
             return View(admin);
         }
 
+<<<<<<< HEAD
+=======
+        public ActionResult ViewProfile()
+        {
+            return View();
+        }
+>>>>>>> cb9763efd51e104642ff41e3633c2e785cbb2eec
     }
 }
