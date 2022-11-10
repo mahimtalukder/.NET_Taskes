@@ -23,5 +23,10 @@ namespace ZeroHunger.Controllers
             var admin = AdminRepo.Get(user.Id);
             return View(admin);
         }
+
+        public ActionResult ViewProfile()
+        {
+            return View();
+        }
     }
 }
