@@ -170,10 +170,18 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminAccess.cs" />
+    <Compile Include="Models\AdminData.cs" />
     <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\AreaModel.cs" />
+    <Compile Include="Models\CheckEmailAdmin.cs" />
+    <Compile Include="Models\CheckEmailEmployee.cs" />
+    <Compile Include="Models\CheckEmailRestaurant.cs" />
+    <Compile Include="Models\EmployeeAccess.cs" />
+    <Compile Include="Models\EmployeeData.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\RestaurantAccess.cs" />
     <Compile Include="Models\RestaurantData.cs" />
+    <Compile Include="Models\RestaurantDataRegistration.cs" />
     <Compile Include="Models\RestaurantModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -741,7 +749,15 @@
     <Content Include="Views\Home\Registration.cshtml" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\ViewProfile.cshtml" />
+    <Content Include="Views\Admin\Setting.cshtml" />
+    <Content Include="Views\Shared\EmployeeLayout.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Employee\ViewProfile.cshtml" />
+    <Content Include="Views\Employee\Setting.cshtml" />
+    <Content Include="Views\Shared\RestaurantLayout.cshtml" />
+    <Content Include="Views\Restaurant\ViewProfile.cshtml" />
+    <Content Include="Views\Restaurant\Setting.cshtml" />
     <Content Include="Views\Restaurant\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

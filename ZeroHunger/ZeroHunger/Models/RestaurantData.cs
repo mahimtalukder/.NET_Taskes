@@ -9,15 +9,16 @@ namespace ZeroHunger.Models
     public class RestaurantData
     {
         [Required]
+        public int UserId { get; set; }
+        [Required]
+        [CheckEmailRestaurant]
         public string Email { get; set; }
-        [Required]
         public string Password { get; set; }
-        [Required]
-        public string ConfirmPassword { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
         public string Address { get; set; }
+        public string Image { get; set; }
         [Required]
         public int AreaId { get; set; }
     }

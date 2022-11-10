@@ -99,7 +99,7 @@ namespace ZeroHunger.Controllers
         }
 
         [HttpPost]
-        public ActionResult Registration(RestaurantData data)
+        public ActionResult Registration(RestaurantDataRegistration data)
         {
             if (ModelState.IsValid)
             {

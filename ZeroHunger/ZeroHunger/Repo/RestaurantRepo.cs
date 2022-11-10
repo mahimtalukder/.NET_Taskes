@@ -30,22 +30,47 @@ namespace ZeroHunger.Repo
             return restaurants;
         }
 
-        public static RestaurantModel Get(int UserId)
+        public static RestaurantData Get(int UserId)
         {
             var db = new ZeroHungerEntities();
-            var user = new RestaurantModel();
-            var res = (from rs in db.Restaurants
-                       where rs.UserId == UserId
-                       select rs).SingleOrDefault();
+            var restaurant = new RestaurantData();
+            var db_restaurant = (from ad in db.Restaurants
+                               where ad.UserId == UserId
+                               select ad).SingleOrDefault();
+            var db_user = (from ad in db.Users
+                           where ad.Id == UserId
+                           select ad).SingleOrDefault();
 
-            user.Id = res.Id;
-            user.Name = res.Name;
-            user.Image = res.Image;
-            user.Address = res.Address;
-            user.AreaId = res.AreaId;
-            user.UserId = res.UserId;
 
-            return user;
+            restaurant.Name = db_restaurant.Name;
+            restaurant.Email = db_user.Email;
+            restaurant.Password = db_user.Password;
+            restaurant.Image = db_restaurant.Image;
+            restaurant.Address = db_restaurant.Address;
+            restaurant.UserId = UserId;
+            restaurant.AreaId = db_restaurant.AreaId;
+
+            return restaurant;
+
+        }
+
+        public static string Update(RestaurantData restaurant)
+        {
+            var db = new ZeroHungerEntities();
+            var db_restaurant = (from res in db.Restaurants
+                               where res.UserId == restaurant.UserId
+                               select res).SingleOrDefault();
+            var db_user = (from ad in db.Users
+                           where ad.Id == restaurant.UserId
+                           select ad).SingleOrDefault();
+
+            db_user.Email = restaurant.Email;
+            db_restaurant.Name = restaurant.Name;
+            db_restaurant.Address = restaurant.Address;
+            db_restaurant.AreaId = restaurant.AreaId;
+            db.SaveChanges();
+
+            return "updated";
 
         }
 

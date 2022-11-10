@@ -22,12 +22,37 @@ namespace ZeroHunger.Controllers
             return View(admin);
         }
 
-<<<<<<< HEAD
-=======
         public ActionResult ViewProfile()
         {
-            return View();
+            string json = (string)Session["admin"];
+            var user = new JavaScriptSerializer().Deserialize<User>(json);
+            var admin = AdminRepo.Get(user.Id);
+            return View(admin);
         }
->>>>>>> cb9763efd51e104642ff41e3633c2e785cbb2eec
+
+        [HttpGet]
+        public ActionResult Setting()
+        {
+            string json = (string)Session["admin"];
+            var user = new JavaScriptSerializer().Deserialize<User>(json);
+            var admin = AdminRepo.Get(user.Id);
+            return View(admin);
+        }
+
+        [HttpPost]
+        public ActionResult Setting(AdminData admin)
+        {
+            string json = (string)Session["admin"];
+            var user = new JavaScriptSerializer().Deserialize<User>(json);
+            var old_admin = AdminRepo.Get(user.Id);
+            if (ModelState.IsValid)
+            {
+                AdminRepo.Update(admin);
+                return RedirectToAction("ViewProfile");
+
+            }
+            admin.Image = old_admin.Image;
+            return View(admin);
+        }
     }
 }

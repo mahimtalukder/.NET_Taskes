@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using ZeroHunger.DB;
 using ZeroHunger.Models;
 
@@ -85,6 +86,23 @@ namespace ZeroHunger.Repo
 
             return newUser;
 
+        }
+
+        public static bool UniqueEmail(string email, int userID)
+        {
+            var db = new ZeroHungerEntities();
+            var user = (from needUser in db.Users
+                      where needUser.Id != userID && needUser.Email == email
+                      select needUser).SingleOrDefault();
+
+            if(user != null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
