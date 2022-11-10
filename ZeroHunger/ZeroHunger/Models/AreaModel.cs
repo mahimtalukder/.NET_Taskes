@@ -10,4 +10,6 @@ namespace ZeroHunger.Models
         public int Id { get; set; }
         public string AreaName { get; set; }
     }
+
+  
 }
