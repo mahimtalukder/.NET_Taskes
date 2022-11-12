@@ -74,19 +74,7 @@ namespace ZeroHunger.Controllers
 
         public ActionResult Logout()
         {
-            if(Session["admin"] != null)
-            {
-                Session.Remove("admin");
-            }
-            if(Session["employee"] != null)
-            {
-                Session.Remove("employee");
-            }
-            if (Session["restaurant"] != null)
-            {
-                Session.Remove("restaurant");
-            }
-
+            Session.Clear();
             return RedirectToAction("Login");
         }
 
@@ -112,7 +100,7 @@ namespace ZeroHunger.Controllers
 
                 var restaurent = new RestaurantModel();
                 restaurent.Name = data.Name;
-                restaurent.Image = "~/Assets/img/profiles/avatar-14.png";
+                restaurent.Image = "/Assets/img/profiles/avatar-14.png";
                 restaurent.Address = data.Address;
                 restaurent.AreaId = data.AreaId;
                 restaurent.UserId = newUser.Id;

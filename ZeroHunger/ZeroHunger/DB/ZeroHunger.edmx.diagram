@@ -20,6 +20,7 @@
         <AssociationConnector Association="ZeroHungerModel.FK_DistributeRequests_Restaurants" ManuallyRouted="false" />
         <AssociationConnector Association="ZeroHungerModel.FK_Employees_Users" ManuallyRouted="false" />
         <AssociationConnector Association="ZeroHungerModel.FK_Restaurants_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ZeroHungerModel.FK_DistributeRequests_Areas" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

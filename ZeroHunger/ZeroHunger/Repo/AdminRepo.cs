@@ -67,6 +67,10 @@ namespace ZeroHunger.Repo
             db_admin.Name = admin.Name;
             db_admin.Address = admin.Address;
             db_admin.DOB = admin.DOB;
+            if (admin.Image != null)
+            {
+                db_admin.Image = admin.Image;
+            }
             db.SaveChanges();
 
             return "updated";

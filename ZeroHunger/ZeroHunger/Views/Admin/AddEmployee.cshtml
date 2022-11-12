@@ -1,0 +1,92 @@
+﻿@model ZeroHunger.Models.EmployeeDataRegistration
+@{
+    ViewBag.Title = "AddEmployee";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewBag.Image = ViewBag.Admin.Image;
+    ViewBag.Name = ViewBag.Admin.Name;
+}
+
+<div class="content container-fluid">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="page-title">Add Employee</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-9 col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Basic information</h5>
+                </div>
+                <div class="card-body">
+
+                    <form method="post" action="">
+
+                        <div class="row form-group">
+                            <label for="name" class="col-sm-3 col-form-label input-label">Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="name" name="Name"
+                                       placeholder="Your Name" value="@Model.Name">
+                                <small id="emailHelp" class="text-danger">@Html.ValidationMessage("Name")</small>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="email" class="col-sm-3 col-form-label input-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" id="email" placeholder="Email" name="Email"
+                                       value="@Model.Email">
+                                <small id="emailHelp" class="text-danger">@Html.ValidationMessage("Email")</small>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <label for="addressline1"
+                                   class="col-sm-3 col-form-label input-label">Address</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="addressline1" name="Address"
+                                       placeholder="Your address" value="@Model.Address">
+                                <small id="emailHelp" class="text-danger">@Html.ValidationMessage("Address")</small>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <label class="col-sm-3 col-form-label input-label">Area</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" name="AreaId">
+                                    @foreach (var area in ViewBag.Areas)
+                                    {
+                                        if (area.Id == Model.AreaId)
+                                        {
+                                            <option value=@area.Id selected>@area.AreaName</option>
+                                        }
+                                        else
+                                        {
+                                            <option value=@area.Id>@area.AreaName</option>
+                                        }
+                                    }
+                                    <option value="value">text</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <input type="hidden" name="UserId" value=@Model.UserId />
+
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("AddEmployee").className = "active";
+</script>
+
+

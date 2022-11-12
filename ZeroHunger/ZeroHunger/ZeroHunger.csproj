@@ -49,6 +49,15 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid, Version=9.28.1.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.9.28.1\lib\net452\SendGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="StarkbankEcdsa, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b2e6337a5d77bfbc, processorArchitecture=MSIL">
+      <HintPath>..\packages\starkbank-ecdsa.1.3.3\lib\net452\StarkbankEcdsa.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -104,9 +113,6 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -173,20 +179,32 @@
     <Compile Include="Models\AdminData.cs" />
     <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\AreaModel.cs" />
+    <Compile Include="Models\CheckEmail.cs" />
     <Compile Include="Models\CheckEmailAdmin.cs" />
     <Compile Include="Models\CheckEmailEmployee.cs" />
     <Compile Include="Models\CheckEmailRestaurant.cs" />
+    <Compile Include="Models\DistributeDetailModel.cs" />
+    <Compile Include="Models\DistributeDetailForCart.cs" />
+    <Compile Include="Models\DistributeRequestModel.cs" />
     <Compile Include="Models\EmployeeAccess.cs" />
     <Compile Include="Models\EmployeeData.cs" />
+    <Compile Include="Models\EmployeeDataRegistration.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\EmployeeRegistrationConfirmMail.cs" />
+    <Compile Include="Models\MailData.cs" />
+    <Compile Include="Models\MailServer.cs" />
+    <Compile Include="Models\RendomStringGenerator.cs" />
     <Compile Include="Models\RestaurantAccess.cs" />
     <Compile Include="Models\RestaurantData.cs" />
     <Compile Include="Models\RestaurantDataRegistration.cs" />
     <Compile Include="Models\RestaurantModel.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\WorkAssignMail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\AdminRepo.cs" />
     <Compile Include="Repo\AreaRepo.cs" />
+    <Compile Include="Repo\DistributeDetailsRepo.cs" />
+    <Compile Include="Repo\DistributeRepo.cs" />
     <Compile Include="Repo\EmployeeRepo.cs" />
     <Compile Include="Repo\RestaurantRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
@@ -275,6 +293,7 @@
     <Content Include="Assets\js\mask.js" />
     <Content Include="Assets\js\script.js" />
     <Content Include="Assets\js\select2.min.js" />
+    <Content Include="Assets\js\TodaysData.js" />
     <Content Include="Assets\plugins\alertify\alertify.min.css" />
     <Content Include="Assets\plugins\alertify\alertify.min.js" />
     <Content Include="Assets\plugins\alertify\custom-alertify.min.js" />
@@ -759,6 +778,9 @@
     <Content Include="Views\Restaurant\ViewProfile.cshtml" />
     <Content Include="Views\Restaurant\Setting.cshtml" />
     <Content Include="Views\Restaurant\Index.cshtml" />
+    <Content Include="Views\Admin\EmpoyeeList.cshtml" />
+    <Content Include="Views\Admin\AddEmployee.cshtml" />
+    <Content Include="Views\Restaurant\DistributeRequests.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

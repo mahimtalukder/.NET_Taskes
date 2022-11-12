@@ -22,7 +22,8 @@
                 </div>
                 <div class="card-body">
 
-                    <form method="post" action="">
+                    <form method="post" action="" enctype="multipart/form-data">
+
                         <div class="row form-group">
                             <label for="name" class="col-sm-3 col-form-label input-label">Image</label>
                             <div class="col-sm-9">
@@ -30,12 +31,11 @@
                                     <label class="avatar avatar-xxl profile-cover-avatar m-0"
                                            for="edit_img">
                                         <img id="avatarImg" class="avatar-img"
-                                             src=@Model.Image alt="Profile Image">
-                                        @*<input type="file" id="edit_img">*@
-                                        @*<span class="avatar-edit">
-                            <i data-feather="edit-2"
-                               class="avatar-uploader-icon shadow-soft"></i>
-                        </span>*@
+                                             src="@Model.Image" alt="Profile Image">
+                                        <input type="file" id="edit_img" name="Image">
+                                        <span class="avatar-edit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 avatar-uploader-icon shadow-soft"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+                                        </span>
                                     </label>
                                 </div>
                             </div>

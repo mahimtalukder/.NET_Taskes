@@ -20,6 +20,7 @@
     <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Areas" FromRole="Areas" ToRole="Employees" />
     <NavigationProperty Name="Restaurants" Relationship="Self.FK_Restaurants_Areas" FromRole="Areas" ToRole="Restaurants" />
+    <NavigationProperty Name="DistributeRequests" Relationship="ZeroHungerModel.FK_DistributeRequests_Areas" FromRole="Area" ToRole="DistributeRequest" />
   </EntityType>
   <EntityType Name="DistributeDetail">
     <Key>
@@ -42,6 +43,8 @@
     <NavigationProperty Name="DistributeDetails" Relationship="Self.FK_DistributeDetails_DistributeRequests" FromRole="DistributeRequests" ToRole="DistributeDetails" />
     <NavigationProperty Name="Employee" Relationship="Self.FK_DistributeRequests_Employees" FromRole="DistributeRequests" ToRole="Employees" />
     <NavigationProperty Name="Restaurant" Relationship="Self.FK_DistributeRequests_Restaurants" FromRole="DistributeRequests" ToRole="Restaurants" />
+    <Property Name="AreaId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Area" Relationship="ZeroHungerModel.FK_DistributeRequests_Areas" FromRole="DistributeRequest" ToRole="Area" />
   </EntityType>
   <EntityType Name="Employee">
     <Key>
@@ -220,5 +223,21 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Restaurants" EntitySet="Restaurants" />
     </AssociationSet>
+    <AssociationSet Name="FK_DistributeRequests_Areas" Association="ZeroHungerModel.FK_DistributeRequests_Areas">
+      <End Role="Area" EntitySet="Areas" />
+      <End Role="DistributeRequest" EntitySet="DistributeRequests" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK_DistributeRequests_Areas">
+    <End Type="ZeroHungerModel.Area" Role="Area" Multiplicity="1" />
+    <End Type="ZeroHungerModel.DistributeRequest" Role="DistributeRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DistributeRequest">
+        <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

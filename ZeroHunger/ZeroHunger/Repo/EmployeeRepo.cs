@@ -9,21 +9,26 @@ namespace ZeroHunger.Repo
 {
     public class EmployeeRepo
     {
-        public static List<EmployeeModel> Get()
+        public static List<EmployeeData> Get()
         {
-            var employees = new List<EmployeeModel>();
+            var employees = new List<EmployeeData>();
             var db = new ZeroHungerEntities();
+            var db_users = db.Users.ToList();
 
             foreach (var employee in db.Employees)
             {
-                employees.Add(new EmployeeModel()
+                var user = (from us in db_users
+                            where us.Id == employee.UserId
+                            select us).FirstOrDefault();
+                employees.Add(new EmployeeData()
                 {
                     Id = employee.Id,
                     Name = employee.Name,
                     Image = employee.Image,
                     Address = employee.Address,
                     UserId = employee.UserId,
-                    AreaId = employee.AreaId
+                    AreaId = employee.AreaId,
+                    Email = user.Email,
                 });
             }
 
@@ -41,7 +46,7 @@ namespace ZeroHunger.Repo
                            where ad.Id == UserId
                            select ad).SingleOrDefault();
 
-
+            employee.Id = db_employee.Id;
             employee.Name = db_employee.Name;
             employee.Email = db_user.Email;
             employee.Password = db_user.Password;
@@ -78,7 +83,18 @@ namespace ZeroHunger.Repo
 
         public static void Create(EmployeeModel employee)
         {
+            var db = new ZeroHungerEntities();
+            var newUser = db.Employees.Add(new Employee()
+            {
+                Name = employee.Name,
+                Image = employee.Image,
+                DOB = employee.DOB,
+                Address = employee.Address,
+                AreaId = employee.AreaId,
+                UserId = employee.UserId,
 
+            });
+            db.SaveChanges();
         }
     }
 }

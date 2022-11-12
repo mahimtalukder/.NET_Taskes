@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ZeroHungerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ZeroHungerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admins">
           <Key>
             <PropertyRef Name="Id" />
@@ -39,6 +39,7 @@
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="PreserveTill" Type="datetime" Nullable="false" />
           <Property Name="RestaurantId" Type="int" Nullable="false" />
+          <Property Name="AreaId" Type="int" Nullable="false" />
           <Property Name="EmployeeId" Type="int" />
         </EntityType>
         <EntityType Name="Employees">
@@ -94,6 +95,18 @@
             </Principal>
             <Dependent Role="DistributeDetails">
               <PropertyRef Name="DistributeRequestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DistributeRequests_Areas">
+          <End Role="Areas" Type="Self.Areas" Multiplicity="1" />
+          <End Role="DistributeRequests" Type="Self.DistributeRequests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Areas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistributeRequests">
+              <PropertyRef Name="AreaId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -185,6 +198,10 @@
             <End Role="DistributeRequests" EntitySet="DistributeRequests" />
             <End Role="DistributeDetails" EntitySet="DistributeDetails" />
           </AssociationSet>
+          <AssociationSet Name="FK_DistributeRequests_Areas" Association="Self.FK_DistributeRequests_Areas">
+            <End Role="Areas" EntitySet="Areas" />
+            <End Role="DistributeRequests" EntitySet="DistributeRequests" />
+          </AssociationSet>
           <AssociationSet Name="FK_DistributeRequests_Employees" Association="Self.FK_DistributeRequests_Employees">
             <End Role="Employees" EntitySet="Employees" />
             <End Role="DistributeRequests" EntitySet="DistributeRequests" />
@@ -210,8 +227,7 @@
             <End Role="Restaurants" EntitySet="Restaurants" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ZeroHungerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -235,6 +251,7 @@
           <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Areas" FromRole="Areas" ToRole="Employees" />
           <NavigationProperty Name="Restaurants" Relationship="Self.FK_Restaurants_Areas" FromRole="Areas" ToRole="Restaurants" />
+          <NavigationProperty Name="DistributeRequests" Relationship="ZeroHungerModel.FK_DistributeRequests_Areas" FromRole="Area" ToRole="DistributeRequest" />
         </EntityType>
         <EntityType Name="DistributeDetail">
           <Key>
@@ -257,6 +274,8 @@
           <NavigationProperty Name="DistributeDetails" Relationship="Self.FK_DistributeDetails_DistributeRequests" FromRole="DistributeRequests" ToRole="DistributeDetails" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_DistributeRequests_Employees" FromRole="DistributeRequests" ToRole="Employees" />
           <NavigationProperty Name="Restaurant" Relationship="Self.FK_DistributeRequests_Restaurants" FromRole="DistributeRequests" ToRole="Restaurants" />
+          <Property Name="AreaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Area" Relationship="ZeroHungerModel.FK_DistributeRequests_Areas" FromRole="DistributeRequest" ToRole="Area" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -435,7 +454,23 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="Restaurants" EntitySet="Restaurants" />
           </AssociationSet>
+          <AssociationSet Name="FK_DistributeRequests_Areas" Association="ZeroHungerModel.FK_DistributeRequests_Areas">
+            <End Role="Area" EntitySet="Areas" />
+            <End Role="DistributeRequest" EntitySet="DistributeRequests" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_DistributeRequests_Areas">
+          <End Type="ZeroHungerModel.Area" Role="Area" Multiplicity="1" />
+          <End Type="ZeroHungerModel.DistributeRequest" Role="DistributeRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistributeRequest">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -474,6 +509,7 @@
           <EntitySetMapping Name="DistributeRequests">
             <EntityTypeMapping TypeName="ZeroHungerModel.DistributeRequest">
               <MappingFragment StoreEntitySet="DistributeRequests">
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="PreserveTill" ColumnName="PreserveTill" />

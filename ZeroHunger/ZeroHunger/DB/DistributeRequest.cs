@@ -24,9 +24,11 @@ namespace ZeroHunger.DB
         public System.DateTime PreserveTill { get; set; }
         public int RestaurantId { get; set; }
         public Nullable<int> EmployeeId { get; set; }
+        public int AreaId { get; set; }
     
         public virtual ICollection<DistributeDetail> DistributeDetails { get; set; }
         public virtual Employee Employee { get; set; }
         public virtual Restaurant Restaurant { get; set; }
+        public virtual Area Area { get; set; }
     }
 }

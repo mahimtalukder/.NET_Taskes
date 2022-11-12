@@ -9,14 +9,14 @@ namespace ZeroHunger.Repo
 {
     public class RestaurantRepo
     {
-        public static List<RestaurantModel> Get()
+        public static List<RestaurantData> Get()
         {
-            var restaurants = new List<RestaurantModel>();
+            var restaurants = new List<RestaurantData>();
             var db = new ZeroHungerEntities();
 
             foreach (var restaurant in db.Restaurants)
             {
-                restaurants.Add(new RestaurantModel()
+                restaurants.Add(new RestaurantData()
                 {
                     Id = restaurant.Id,
                     Name = restaurant.Name,
@@ -42,6 +42,7 @@ namespace ZeroHunger.Repo
                            select ad).SingleOrDefault();
 
 
+            restaurant.Id = db_restaurant.Id;
             restaurant.Name = db_restaurant.Name;
             restaurant.Email = db_user.Email;
             restaurant.Password = db_user.Password;
