@@ -28,7 +28,7 @@ namespace ZeroHunger.DB
         public int UserId { get; set; }
     
         public virtual Area Area { get; set; }
-        public virtual ICollection<DistributeRequest> DistributeRequests { get; set; }
         public virtual User User { get; set; }
+        public virtual ICollection<DistributeRequest> DistributeRequests { get; set; }
     }
 }

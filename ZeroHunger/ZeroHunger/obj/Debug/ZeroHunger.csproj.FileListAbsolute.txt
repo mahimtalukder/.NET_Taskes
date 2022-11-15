@@ -164,3 +164,7 @@ C:\MyCodeBase\.NET_Taskes\ZeroHunger\ZeroHunger\bin\SendGrid.dll
 C:\MyCodeBase\.NET_Taskes\ZeroHunger\ZeroHunger\bin\StarkbankEcdsa.dll
 C:\MyCodeBase\.NET_Taskes\ZeroHunger\ZeroHunger\bin\SendGrid.pdb
 C:\MyCodeBase\.NET_Taskes\ZeroHunger\ZeroHunger\bin\SendGrid.xml
+C:\xampp\htdocs\.NET_Taskes\ZeroHunger\ZeroHunger\bin\SendGrid.dll
+C:\xampp\htdocs\.NET_Taskes\ZeroHunger\ZeroHunger\bin\StarkbankEcdsa.dll
+C:\xampp\htdocs\.NET_Taskes\ZeroHunger\ZeroHunger\bin\SendGrid.pdb
+C:\xampp\htdocs\.NET_Taskes\ZeroHunger\ZeroHunger\bin\SendGrid.xml
