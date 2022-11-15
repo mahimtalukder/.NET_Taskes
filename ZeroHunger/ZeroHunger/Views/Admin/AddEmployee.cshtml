@@ -55,6 +55,7 @@
                             <label class="col-sm-3 col-form-label input-label">Area</label>
                             <div class="col-sm-9">
                                 <select class="form-control" name="AreaId">
+                                    <option selected>Select One</option>
                                     @foreach (var area in ViewBag.Areas)
                                     {
                                         if (area.Id == Model.AreaId)
@@ -66,7 +67,6 @@
                                             <option value=@area.Id>@area.AreaName</option>
                                         }
                                     }
-                                    <option value="value">text</option>
                                 </select>
                             </div>
                         </div>

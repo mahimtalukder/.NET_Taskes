@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "EmpoyeeList";
+    ViewBag.Image = ViewBag.Admin.Image;
+    ViewBag.Name = ViewBag.Admin.Name;
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="content container-fluid">
+
+    <div class="row">
+        <div class="col-lg-3">
+
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title d-flex justify-content-between">
+                        <span>Food</span>
+                    </h5>
+                </div>
+                <div class="card-body">
+
+                    <form method="post" action="">
+                        <div class="row form-group">
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="Area" name="AreaName"
+                                       placeholder="Area Name">
+                                <small id="emailHelp" class="text-danger">@Html.ValidationMessage("AreaName")</small>
+                            </div>
+                        </div>
+
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Distribute Request</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-nowrap mb-0">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Area Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (ViewBag.Areas != null)
+                                {
+                                    foreach (var item in ViewBag.Areas)
+                                    {
+                                        <tr>
+                                            <td>@item.Id</td>
+                                            <td>@item.AreaName</td>
+                                        </tr>
+
+                                    }
+
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    document.getElementById("AreaList").className = "active";
+</script>
+
+

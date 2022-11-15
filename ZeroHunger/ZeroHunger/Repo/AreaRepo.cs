@@ -26,5 +26,30 @@ namespace ZeroHunger.Repo
             }
             return areas;
         }
+
+        public static bool IsUnique(string AreaName, int Id)
+        {
+            var db = new ZeroHungerEntities();
+            var area = (from ar in db.Areas
+                        where ar.AreaName == AreaName && ar.Id != Id
+                        select ar).FirstOrDefault();
+
+            if(area == null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static void Create(AreaModel area)
+        {
+            var db = new ZeroHungerEntities();
+            var newArea = new Area()
+            {
+                AreaName = area.AreaName,
+            };
+            db.Areas.Add(newArea);
+            db.SaveChanges();
+        }
     }
 }

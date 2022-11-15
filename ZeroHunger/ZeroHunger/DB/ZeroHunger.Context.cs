@@ -18,6 +18,7 @@ namespace ZeroHunger.DB
         public ZeroHungerEntities()
             : base("name=ZeroHungerEntities")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
