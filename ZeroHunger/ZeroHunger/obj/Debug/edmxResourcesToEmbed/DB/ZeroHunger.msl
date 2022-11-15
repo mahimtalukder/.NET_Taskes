@@ -33,11 +33,11 @@
     <EntitySetMapping Name="DistributeRequests">
       <EntityTypeMapping TypeName="ZeroHungerModel.DistributeRequest">
         <MappingFragment StoreEntitySet="DistributeRequests">
-          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="PreserveTill" ColumnName="PreserveTill" />
           <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
           <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
         </MappingFragment>
       </EntityTypeMapping>

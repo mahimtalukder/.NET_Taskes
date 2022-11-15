@@ -270,12 +270,12 @@
           <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="PreserveTill" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="RestaurantId" Type="Int32" Nullable="false" />
+          <Property Name="AreaId" Type="Int32" Nullable="false" />
           <Property Name="EmployeeId" Type="Int32" />
           <NavigationProperty Name="DistributeDetails" Relationship="Self.FK_DistributeDetails_DistributeRequests" FromRole="DistributeRequests" ToRole="DistributeDetails" />
-          <NavigationProperty Name="Employee" Relationship="Self.FK_DistributeRequests_Employees" FromRole="DistributeRequests" ToRole="Employees" />
-          <NavigationProperty Name="Restaurant" Relationship="Self.FK_DistributeRequests_Restaurants" FromRole="DistributeRequests" ToRole="Restaurants" />
-          <Property Name="AreaId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Area" Relationship="ZeroHungerModel.FK_DistributeRequests_Areas" FromRole="DistributeRequest" ToRole="Area" />
+          <NavigationProperty Name="Employee" Relationship="ZeroHungerModel.FK_DistributeRequests_Employees" FromRole="DistributeRequest" ToRole="Employee" />
+          <NavigationProperty Name="Restaurant" Relationship="ZeroHungerModel.FK_DistributeRequests_Restaurants" FromRole="DistributeRequest" ToRole="Restaurant" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -289,8 +289,8 @@
           <Property Name="AreaId" Type="Int32" Nullable="false" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Area" Relationship="Self.FK_Employees_Areas" FromRole="Employees" ToRole="Areas" />
-          <NavigationProperty Name="DistributeRequests" Relationship="Self.FK_DistributeRequests_Employees" FromRole="Employees" ToRole="DistributeRequests" />
           <NavigationProperty Name="User" Relationship="Self.FK_Employees_Users" FromRole="Employees" ToRole="Users" />
+          <NavigationProperty Name="DistributeRequests" Relationship="ZeroHungerModel.FK_DistributeRequests_Employees" FromRole="Employee" ToRole="DistributeRequest" />
         </EntityType>
         <EntityType Name="Restaurant">
           <Key>
@@ -303,8 +303,8 @@
           <Property Name="AreaId" Type="Int32" Nullable="false" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Area" Relationship="Self.FK_Restaurants_Areas" FromRole="Restaurants" ToRole="Areas" />
-          <NavigationProperty Name="DistributeRequests" Relationship="Self.FK_DistributeRequests_Restaurants" FromRole="Restaurants" ToRole="DistributeRequests" />
           <NavigationProperty Name="User" Relationship="Self.FK_Restaurants_Users" FromRole="Restaurants" ToRole="Users" />
+          <NavigationProperty Name="DistributeRequests" Relationship="ZeroHungerModel.FK_DistributeRequests_Restaurants" FromRole="Restaurant" ToRole="DistributeRequest" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -366,30 +366,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_DistributeRequests_Employees">
-          <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
-          <End Role="DistributeRequests" Type="Self.DistributeRequest" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employees">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="DistributeRequests">
-              <PropertyRef Name="EmployeeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_DistributeRequests_Restaurants">
-          <End Role="Restaurants" Type="Self.Restaurant" Multiplicity="1" />
-          <End Role="DistributeRequests" Type="Self.DistributeRequest" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Restaurants">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="DistributeRequests">
-              <PropertyRef Name="RestaurantId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Employees_Users">
           <End Role="Users" Type="Self.User" Multiplicity="1" />
           <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
@@ -438,14 +414,6 @@
             <End Role="DistributeRequests" EntitySet="DistributeRequests" />
             <End Role="DistributeDetails" EntitySet="DistributeDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK_DistributeRequests_Employees" Association="Self.FK_DistributeRequests_Employees">
-            <End Role="Employees" EntitySet="Employees" />
-            <End Role="DistributeRequests" EntitySet="DistributeRequests" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DistributeRequests_Restaurants" Association="Self.FK_DistributeRequests_Restaurants">
-            <End Role="Restaurants" EntitySet="Restaurants" />
-            <End Role="DistributeRequests" EntitySet="DistributeRequests" />
-          </AssociationSet>
           <AssociationSet Name="FK_Employees_Users" Association="Self.FK_Employees_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Employees" EntitySet="Employees" />
@@ -458,6 +426,14 @@
             <End Role="Area" EntitySet="Areas" />
             <End Role="DistributeRequest" EntitySet="DistributeRequests" />
           </AssociationSet>
+          <AssociationSet Name="FK_DistributeRequests_Employees" Association="ZeroHungerModel.FK_DistributeRequests_Employees">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="DistributeRequest" EntitySet="DistributeRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DistributeRequests_Restaurants" Association="ZeroHungerModel.FK_DistributeRequests_Restaurants">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="DistributeRequest" EntitySet="DistributeRequests" />
+          </AssociationSet>
         </EntityContainer>
         <Association Name="FK_DistributeRequests_Areas">
           <End Type="ZeroHungerModel.Area" Role="Area" Multiplicity="1" />
@@ -468,6 +444,30 @@
             </Principal>
             <Dependent Role="DistributeRequest">
               <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DistributeRequests_Employees">
+          <End Type="ZeroHungerModel.Employee" Role="Employee" Multiplicity="0..1" />
+          <End Type="ZeroHungerModel.DistributeRequest" Role="DistributeRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistributeRequest">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DistributeRequests_Restaurants">
+          <End Type="ZeroHungerModel.Restaurant" Role="Restaurant" Multiplicity="1" />
+          <End Type="ZeroHungerModel.DistributeRequest" Role="DistributeRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistributeRequest">
+              <PropertyRef Name="RestaurantId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -509,11 +509,11 @@
           <EntitySetMapping Name="DistributeRequests">
             <EntityTypeMapping TypeName="ZeroHungerModel.DistributeRequest">
               <MappingFragment StoreEntitySet="DistributeRequests">
-                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="PreserveTill" ColumnName="PreserveTill" />
                 <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
               </MappingFragment>
             </EntityTypeMapping>

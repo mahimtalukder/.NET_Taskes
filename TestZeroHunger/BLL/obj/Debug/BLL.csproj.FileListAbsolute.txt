@@ -1,0 +1,12 @@
+C:\xampp\htdocs\.NET_Taskes\TestZeroHunger\BLL\bin\Debug\BLL.dll
+C:\xampp\htdocs\.NET_Taskes\TestZeroHunger\BLL\bin\Debug\BLL.pdb
+C:\xampp\htdocs\.NET_Taskes\TestZeroHunger\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\xampp\htdocs\.NET_Taskes\TestZeroHunger\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\.NET_Taskes\TestZeroHunger\BLL\obj\Debug\BLL.dll
+C:\xampp\htdocs\.NET_Taskes\TestZeroHunger\BLL\obj\Debug\BLL.pdb
+C:\xampp\htdocs\.NET_Taskes\TestZeroHunger\BLL\bin\Debug\DAL.dll
+C:\xampp\htdocs\.NET_Taskes\TestZeroHunger\BLL\bin\Debug\EntityFramework.dll
+C:\xampp\htdocs\.NET_Taskes\TestZeroHunger\BLL\bin\Debug\DAL.pdb
+C:\xampp\htdocs\.NET_Taskes\TestZeroHunger\BLL\bin\Debug\DAL.dll.config
+C:\xampp\htdocs\.NET_Taskes\TestZeroHunger\BLL\bin\Debug\EntityFramework.xml
+C:\xampp\htdocs\.NET_Taskes\TestZeroHunger\BLL\obj\Debug\BLL.csproj.CopyComplete
