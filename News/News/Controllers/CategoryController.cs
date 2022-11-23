@@ -53,9 +53,16 @@ namespace News.Controllers
 
         public ActionResult Delete(int Id)
         {
+            if (CategoryServices.HasNews(Id))
+            {
+                TempData["msg"] = "Delete not poassibale";
+                return RedirectToAction("Index");
+            }
             CategoryServices.Delete(Id);
             return RedirectToAction("Index");
         }
+
+
 
     }
 }

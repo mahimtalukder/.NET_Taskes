@@ -66,6 +66,11 @@ namespace BLL
             obj.Update(cat);
         }
 
+        public static bool HasNews(int Id)
+        {
+            var obj = new CategoryRepo();
+            return obj.HasNews(Id);
+        }
         public static void Delete(int Id)
         {
             var obj = new CategoryRepo();

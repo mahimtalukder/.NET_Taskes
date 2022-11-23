@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
@@ -167,6 +168,50 @@ namespace ZeroHunger.Controllers
             ViewBag.admin = AdminRepo.Get(user.Id);
             ViewBag.Areas = AreaRepo.Get();
             return View(employee);
+        }
+        
+        public ActionResult RestaurantList()
+        {
+            string json = (string)Session["admin"];
+            var user = new JavaScriptSerializer().Deserialize<User>(json);
+            var admin = AdminRepo.Get(user.Id);
+
+            ViewBag.Areas = AreaRepo.Get();
+            var requests = DistributeRepo.Get();
+            ViewBag.Requests = requests;
+
+            ViewBag.Restaurants = RestaurantRepo.Get();
+          
+            return View(admin);
+        }
+
+        [HttpGet]
+        public ActionResult AreaList()
+        {
+            string json = (string)Session["admin"];
+            var user = new JavaScriptSerializer().Deserialize<User>(json);
+            var admin = AdminRepo.Get(user.Id);
+            ViewBag.Admin = admin;
+
+            ViewBag.Areas = AreaRepo.Get();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AreaList(AreaModel new_area)
+        {
+            if (ModelState.IsValid)
+            {
+                AreaRepo.Create(new_area);
+                return RedirectToAction("AreaList");
+            }
+            string json = (string)Session["admin"];
+            var user = new JavaScriptSerializer().Deserialize<User>(json);
+            var admin = AdminRepo.Get(user.Id);
+            ViewBag.Admin = admin;
+
+            ViewBag.Areas = AreaRepo.Get();
+            return View(new_area);
         }
     }
 }

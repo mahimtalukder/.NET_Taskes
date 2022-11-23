@@ -17,7 +17,10 @@ namespace DAL.Repo
 
         public User Get(string Id)
         {
-            throw new NotImplementedException();
+            var db = new TestZeroHungerEntities();
+            var user = (from us in db.Users 
+                        where us.UserName == Id select us).SingleOrDefault();
+            return user;
         }
     }
 }

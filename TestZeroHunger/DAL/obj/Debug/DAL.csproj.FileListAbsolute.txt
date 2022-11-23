@@ -8,3 +8,13 @@ C:\xampp\htdocs\.NET_Taskes\TestZeroHunger\DAL\obj\Debug\DAL.csproj.CoreCompileI
 C:\xampp\htdocs\.NET_Taskes\TestZeroHunger\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\xampp\htdocs\.NET_Taskes\TestZeroHunger\DAL\obj\Debug\DAL.dll
 C:\xampp\htdocs\.NET_Taskes\TestZeroHunger\DAL\obj\Debug\DAL.pdb
+C:\MyCodeBase\.NET_Taskes\TestZeroHunger\DAL\bin\Debug\DAL.dll.config
+C:\MyCodeBase\.NET_Taskes\TestZeroHunger\DAL\bin\Debug\DAL.dll
+C:\MyCodeBase\.NET_Taskes\TestZeroHunger\DAL\bin\Debug\DAL.pdb
+C:\MyCodeBase\.NET_Taskes\TestZeroHunger\DAL\bin\Debug\EntityFramework.dll
+C:\MyCodeBase\.NET_Taskes\TestZeroHunger\DAL\bin\Debug\EntityFramework.xml
+C:\MyCodeBase\.NET_Taskes\TestZeroHunger\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\MyCodeBase\.NET_Taskes\TestZeroHunger\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\MyCodeBase\.NET_Taskes\TestZeroHunger\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\MyCodeBase\.NET_Taskes\TestZeroHunger\DAL\obj\Debug\DAL.dll
+C:\MyCodeBase\.NET_Taskes\TestZeroHunger\DAL\obj\Debug\DAL.pdb

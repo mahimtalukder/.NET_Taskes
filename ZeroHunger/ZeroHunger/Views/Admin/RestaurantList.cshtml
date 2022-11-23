@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "EmpoyeeList";
+    ViewBag.Image = Model.Image;
+    ViewBag.Name = Model.Name;
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="content container-fluid">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="page-title">Restaurant List</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center text-center">
+        <div class="col-xl-9 col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Restaurants</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-nowrap mb-0">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Area</th>
+                                    <th>Total Distribute request</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var res in ViewBag.Restaurants)
+                                {
+                                    <tr>
+                                        <td>@res.Id</td>
+                                        <td>@res.Name</td>
+                                        <td>@res.Address</td>
+                                        @foreach (var area in ViewBag.Areas)
+                                        {
+                                            if (area.Id == res.AreaId)
+                                            {
+                                                <td>@area.AreaName</td>
+                                            }
+                                        }
+                                        @{ 
+                                            int count = 0;
+
+                                        foreach (var item in ViewBag.Requests)
+                                        {
+                                            if (item.RestaurantId == res.Id)
+                                            {
+                                                count++;
+                                            }
+
+                                        }
+                                            
+                                        }
+
+                                        <td>@count</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("RestaurantList").className = "active";
+</script>
+
+

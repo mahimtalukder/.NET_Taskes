@@ -198,6 +198,7 @@
     <Compile Include="Models\RestaurantData.cs" />
     <Compile Include="Models\RestaurantDataRegistration.cs" />
     <Compile Include="Models\RestaurantModel.cs" />
+    <Compile Include="Models\UniqueArea.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\WorkAssignMail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -781,6 +782,8 @@
     <Content Include="Views\Admin\EmpoyeeList.cshtml" />
     <Content Include="Views\Admin\AddEmployee.cshtml" />
     <Content Include="Views\Restaurant\DistributeRequests.cshtml" />
+    <Content Include="Views\Admin\RestaurantList.cshtml" />
+    <Content Include="Views\Admin\AreaList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

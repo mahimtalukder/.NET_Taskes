@@ -48,5 +48,19 @@ namespace DAL.Repo
             db.SaveChanges();
             return category;
         }
+
+        public bool HasNews(int Id)
+        {
+            var db = new NewsDBEntities();
+            var news = (from n in db.Newses
+                        where n.CategoryId == Id
+                        select n).FirstOrDefault();
+
+            if(news == null)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
