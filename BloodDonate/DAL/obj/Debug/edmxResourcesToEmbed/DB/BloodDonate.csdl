@@ -17,6 +17,8 @@
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Donors" Relationship="Self.FK_Donors_Groups" FromRole="Groups" ToRole="Donors" />
   </EntityType>
+<<<<<<< HEAD
+=======
   <EntityType Name="Token">
     <Key>
       <PropertyRef Name="Id" />
@@ -36,6 +38,7 @@
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Tokens" Relationship="Self.FK_Tokens_Users" FromRole="Users" ToRole="Tokens" />
   </EntityType>
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8
   <Association Name="FK_Donors_Groups">
     <End Role="Groups" Type="Self.Group" Multiplicity="1" />
     <End Role="Donors" Type="Self.Donor" Multiplicity="*" />
@@ -48,6 +51,11 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+<<<<<<< HEAD
+  <EntityContainer Name="BloodBankEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Donors" EntityType="Self.Donor" />
+    <EntitySet Name="Groups" EntityType="Self.Group" />
+=======
   <Association Name="FK_Tokens_Users">
     <End Role="Users" Type="Self.User" Multiplicity="1" />
     <End Role="Tokens" Type="Self.Token" Multiplicity="*" />
@@ -65,13 +73,26 @@
     <EntitySet Name="Groups" EntityType="Self.Group" />
     <EntitySet Name="Tokens" EntityType="Self.Token" />
     <EntitySet Name="Users" EntityType="Self.User" />
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8
     <AssociationSet Name="FK_Donors_Groups" Association="Self.FK_Donors_Groups">
       <End Role="Groups" EntitySet="Groups" />
       <End Role="Donors" EntitySet="Donors" />
     </AssociationSet>
+<<<<<<< HEAD
+    <EntitySet Name="Users" EntityType="BloodBankModel.User" />
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+=======
     <AssociationSet Name="FK_Tokens_Users" Association="Self.FK_Tokens_Users">
       <End Role="Users" EntitySet="Users" />
       <End Role="Tokens" EntitySet="Tokens" />
     </AssociationSet>
   </EntityContainer>
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8
 </Schema>

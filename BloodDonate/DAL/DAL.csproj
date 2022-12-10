@@ -70,9 +70,12 @@
     <Compile Include="DB\Group.cs">
       <DependentUpon>BloodDonate.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
     <Compile Include="DB\Token.cs">
       <DependentUpon>BloodDonate.tt</DependentUpon>
     </Compile>
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8
     <Compile Include="DB\User.cs">
       <DependentUpon>BloodDonate.tt</DependentUpon>
     </Compile>
@@ -81,21 +84,39 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\DonorRepo.cs" />
     <Compile Include="Repo\GroupRepo.cs" />
+<<<<<<< HEAD
+    <Compile Include="Repo\UserRepo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+=======
     <Compile Include="Repo\TokenRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8
     <EntityDeploy Include="DB\BloodDonate.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BloodDonate.Designer.cs</LastGenOutput>
     </EntityDeploy>
+<<<<<<< HEAD
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+=======
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8
     <None Include="DB\BloodDonate.edmx.diagram">
       <DependentUpon>BloodDonate.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Content Include="DB\BloodDonate.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BloodDonate.Context.cs</LastGenOutput>
+      <DependentUpon>BloodDonate.edmx</DependentUpon>
+=======
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +124,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BloodDonate.edmx</DependentUpon>
       <LastGenOutput>BloodDonate.Context.cs</LastGenOutput>
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8
     </Content>
     <Content Include="DB\BloodDonate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -110,5 +132,11 @@
       <LastGenOutput>BloodDonate.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+<<<<<<< HEAD
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+=======
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

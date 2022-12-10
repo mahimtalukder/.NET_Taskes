@@ -27,7 +27,10 @@ namespace DAL.DB
     
         public DbSet<Donor> Donors { get; set; }
         public DbSet<Group> Groups { get; set; }
+<<<<<<< HEAD
+=======
         public DbSet<Token> Tokens { get; set; }
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8
         public DbSet<User> Users { get; set; }
     }
 }

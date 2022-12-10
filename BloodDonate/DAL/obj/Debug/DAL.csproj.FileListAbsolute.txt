@@ -8,6 +8,8 @@ C:\MyCodeBase\.NET_Taskes\BloodDonate\DAL\obj\Debug\DAL.csproj.CoreCompileInputs
 C:\MyCodeBase\.NET_Taskes\BloodDonate\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\MyCodeBase\.NET_Taskes\BloodDonate\DAL\obj\Debug\DAL.dll
 C:\MyCodeBase\.NET_Taskes\BloodDonate\DAL\obj\Debug\DAL.pdb
+<<<<<<< HEAD
+=======
 C:\xampp\htdocs\.NET_Taskes\BloodDonate\DAL\bin\Debug\DAL.dll.config
 C:\xampp\htdocs\.NET_Taskes\BloodDonate\DAL\bin\Debug\DAL.dll
 C:\xampp\htdocs\.NET_Taskes\BloodDonate\DAL\bin\Debug\DAL.pdb
@@ -18,3 +20,4 @@ C:\xampp\htdocs\.NET_Taskes\BloodDonate\DAL\obj\Debug\DAL.csproj.CoreCompileInpu
 C:\xampp\htdocs\.NET_Taskes\BloodDonate\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\xampp\htdocs\.NET_Taskes\BloodDonate\DAL\obj\Debug\DAL.dll
 C:\xampp\htdocs\.NET_Taskes\BloodDonate\DAL\obj\Debug\DAL.pdb
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8

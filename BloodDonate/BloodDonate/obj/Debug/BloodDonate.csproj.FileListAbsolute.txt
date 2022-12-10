@@ -92,6 +92,8 @@ C:\MyCodeBase\.NET_Taskes\BloodDonate\BloodDonate\obj\Debug\BloodDonate.csproj.C
 C:\MyCodeBase\.NET_Taskes\BloodDonate\BloodDonate\obj\Debug\BloodDonate.csproj.CopyComplete
 C:\MyCodeBase\.NET_Taskes\BloodDonate\BloodDonate\obj\Debug\BloodDonate.dll
 C:\MyCodeBase\.NET_Taskes\BloodDonate\BloodDonate\obj\Debug\BloodDonate.pdb
+<<<<<<< HEAD
+=======
 C:\xampp\htdocs\.NET_Taskes\BloodDonate\BloodDonate\bin\BloodDonate.dll.config
 C:\xampp\htdocs\.NET_Taskes\BloodDonate\BloodDonate\bin\BloodDonate.dll
 C:\xampp\htdocs\.NET_Taskes\BloodDonate\BloodDonate\bin\BloodDonate.pdb
@@ -186,3 +188,4 @@ C:\xampp\htdocs\.NET_Taskes\BloodDonate\BloodDonate\obj\Debug\BloodDonate.csproj
 C:\xampp\htdocs\.NET_Taskes\BloodDonate\BloodDonate\obj\Debug\BloodDonate.csproj.CopyComplete
 C:\xampp\htdocs\.NET_Taskes\BloodDonate\BloodDonate\obj\Debug\BloodDonate.dll
 C:\xampp\htdocs\.NET_Taskes\BloodDonate\BloodDonate\obj\Debug\BloodDonate.pdb
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8

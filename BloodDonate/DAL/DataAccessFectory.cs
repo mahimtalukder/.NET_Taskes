@@ -30,9 +30,12 @@ namespace DAL
         {
             return new UserRepo();
         }
+<<<<<<< HEAD
+=======
         public static IRepo<Token, string, Token> TokenDataAccess()
         {
             return new TokenRepo();
         }
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8
     }
 }

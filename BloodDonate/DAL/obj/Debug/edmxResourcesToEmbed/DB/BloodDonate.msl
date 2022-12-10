@@ -18,6 +18,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="BloodBankModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+=======
     <EntitySetMapping Name="Tokens">
       <EntityTypeMapping TypeName="BloodBankModel.Token">
         <MappingFragment StoreEntitySet="Tokens">
@@ -34,6 +41,7 @@
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
