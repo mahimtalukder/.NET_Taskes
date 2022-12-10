@@ -12,3 +12,20 @@ C:\MyCodeBase\.NET_Taskes\BloodDonate\BLL\obj\Debug\BLL.dll
 C:\MyCodeBase\.NET_Taskes\BloodDonate\BLL\obj\Debug\BLL.pdb
 C:\MyCodeBase\.NET_Taskes\BloodDonate\BLL\bin\Debug\AutoMapper.dll
 C:\MyCodeBase\.NET_Taskes\BloodDonate\BLL\bin\Debug\AutoMapper.xml
+<<<<<<< HEAD
+=======
+C:\xampp\htdocs\.NET_Taskes\BloodDonate\BLL\bin\Debug\BLL.dll
+C:\xampp\htdocs\.NET_Taskes\BloodDonate\BLL\bin\Debug\BLL.pdb
+C:\xampp\htdocs\.NET_Taskes\BloodDonate\BLL\bin\Debug\AutoMapper.dll
+C:\xampp\htdocs\.NET_Taskes\BloodDonate\BLL\bin\Debug\DAL.dll
+C:\xampp\htdocs\.NET_Taskes\BloodDonate\BLL\bin\Debug\EntityFramework.dll
+C:\xampp\htdocs\.NET_Taskes\BloodDonate\BLL\bin\Debug\DAL.pdb
+C:\xampp\htdocs\.NET_Taskes\BloodDonate\BLL\bin\Debug\DAL.dll.config
+C:\xampp\htdocs\.NET_Taskes\BloodDonate\BLL\bin\Debug\AutoMapper.xml
+C:\xampp\htdocs\.NET_Taskes\BloodDonate\BLL\bin\Debug\EntityFramework.xml
+C:\xampp\htdocs\.NET_Taskes\BloodDonate\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\xampp\htdocs\.NET_Taskes\BloodDonate\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\.NET_Taskes\BloodDonate\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\xampp\htdocs\.NET_Taskes\BloodDonate\BLL\obj\Debug\BLL.dll
+C:\xampp\htdocs\.NET_Taskes\BloodDonate\BLL\obj\Debug\BLL.pdb
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8

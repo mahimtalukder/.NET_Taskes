@@ -1,0 +1,14 @@
+C:\MyCodeBase\.NET_Taskes\PostComment\BLL\bin\Debug\BLL.dll
+C:\MyCodeBase\.NET_Taskes\PostComment\BLL\bin\Debug\BLL.pdb
+C:\MyCodeBase\.NET_Taskes\PostComment\BLL\bin\Debug\DAL.dll
+C:\MyCodeBase\.NET_Taskes\PostComment\BLL\bin\Debug\EntityFramework.dll
+C:\MyCodeBase\.NET_Taskes\PostComment\BLL\bin\Debug\DAL.pdb
+C:\MyCodeBase\.NET_Taskes\PostComment\BLL\bin\Debug\DAL.dll.config
+C:\MyCodeBase\.NET_Taskes\PostComment\BLL\bin\Debug\EntityFramework.xml
+C:\MyCodeBase\.NET_Taskes\PostComment\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\MyCodeBase\.NET_Taskes\PostComment\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\MyCodeBase\.NET_Taskes\PostComment\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\MyCodeBase\.NET_Taskes\PostComment\BLL\obj\Debug\BLL.dll
+C:\MyCodeBase\.NET_Taskes\PostComment\BLL\obj\Debug\BLL.pdb
+C:\MyCodeBase\.NET_Taskes\PostComment\BLL\bin\Debug\AutoMapper.dll
+C:\MyCodeBase\.NET_Taskes\PostComment\BLL\bin\Debug\AutoMapper.xml

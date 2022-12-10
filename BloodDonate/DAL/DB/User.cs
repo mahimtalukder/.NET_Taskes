@@ -14,7 +14,19 @@ namespace DAL.DB
     
     public partial class User
     {
+<<<<<<< HEAD
         public string UserName { get; set; }
         public string Password { get; set; }
+=======
+        public User()
+        {
+            this.Tokens = new HashSet<Token>();
+        }
+    
+        public string UserName { get; set; }
+        public string Password { get; set; }
+    
+        public virtual ICollection<Token> Tokens { get; set; }
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8
     }
 }

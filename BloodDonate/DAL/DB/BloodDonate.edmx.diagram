@@ -4,11 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
+<<<<<<< HEAD
       <Diagram DiagramId="b58bb567079041d2be1e48e3b9bf09e9" Name="Diagram1">
         <EntityTypeShape EntityType="BloodBankModel.Donor" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="BloodBankModel.Group" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="BloodBankModel.FK_Donors_Groups" ManuallyRouted="false" />
         <EntityTypeShape EntityType="BloodBankModel.User" Width="1.5" PointX="0.75" PointY="3.75" />
+=======
+      <Diagram DiagramId="b8e022c2910449d7af4b1a7115fa6975" Name="Diagram1">
+        <EntityTypeShape EntityType="BloodBankModel.Donor" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BloodBankModel.Group" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BloodBankModel.Token" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BloodBankModel.User" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="BloodBankModel.FK_Donors_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="BloodBankModel.FK_Tokens_Users" ManuallyRouted="false" />
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

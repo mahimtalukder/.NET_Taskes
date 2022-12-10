@@ -28,7 +28,11 @@ namespace DAL.Repo
         public User Authenticate(string username, string password)
         {
             var user = db.Users.Find(username);
+<<<<<<< HEAD
             if(user == null && user.Password == password)
+=======
+            if(user != null && user.Password == password)
+>>>>>>> 088bfe6b5482766e716d9d1e49288ca88534c0b8
             {
                 return user;
             }

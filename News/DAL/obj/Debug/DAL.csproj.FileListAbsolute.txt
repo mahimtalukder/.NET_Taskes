@@ -1,0 +1,10 @@
+C:\xampp\htdocs\.NET_Taskes\News\DAL\bin\Debug\DAL.dll.config
+C:\xampp\htdocs\.NET_Taskes\News\DAL\bin\Debug\DAL.dll
+C:\xampp\htdocs\.NET_Taskes\News\DAL\bin\Debug\DAL.pdb
+C:\xampp\htdocs\.NET_Taskes\News\DAL\bin\Debug\EntityFramework.dll
+C:\xampp\htdocs\.NET_Taskes\News\DAL\bin\Debug\EntityFramework.xml
+C:\xampp\htdocs\.NET_Taskes\News\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\xampp\htdocs\.NET_Taskes\News\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\.NET_Taskes\News\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\xampp\htdocs\.NET_Taskes\News\DAL\obj\Debug\DAL.dll
+C:\xampp\htdocs\.NET_Taskes\News\DAL\obj\Debug\DAL.pdb
